@@ -1,16 +1,3 @@
-// Funcion del metodo filter
-function mostrarEnPantalla(productos) {
-  mensaje = "Lista de productos filtrada en la tienda de ropa masculina:\n\n";
-  productos.forEach(function (producto) {
-    mensaje += "ID: " + producto.id + " - ";
-    mensaje += "Talle: " + producto.talle + " - ";
-    mensaje += "Color: " + producto.color + " - ";
-    mensaje += "Precio: $" + producto.precio + " - ";
-    mensaje += "Tipo: " + producto.tipo + "\n";
-  });
-  return alert(mensaje);
-}
-
 // array de objetos
 
 let tiendaDeRopaMasculina = [
@@ -22,6 +9,7 @@ let tiendaDeRopaMasculina = [
     tipo: "camisa",
     precio: 29.99,
     vendido: false,
+    rutaImagen: "camisaAzulHombre.png",
   },
   {
     id: 2,
@@ -31,6 +19,7 @@ let tiendaDeRopaMasculina = [
     tipo: "campera",
     precio: 69.99,
     vendido: false,
+    rutaImagen: "camperaNegraHombre.png",
   },
   {
     id: 3,
@@ -40,6 +29,7 @@ let tiendaDeRopaMasculina = [
     tipo: "remera",
     precio: 19.99,
     vendido: false,
+    rutaImagen: "remeraBlancaHombre.png",
   },
   {
     id: 4,
@@ -49,6 +39,7 @@ let tiendaDeRopaMasculina = [
     tipo: "pantalon",
     precio: 39.99,
     vendido: false,
+    rutaImagen: "pantalonGrisHombre.png",
   },
   {
     id: 5,
@@ -58,6 +49,7 @@ let tiendaDeRopaMasculina = [
     tipo: "buzo",
     precio: 49.99,
     vendido: false,
+    rutaImagen: "buzoVerdeHombre.png",
   },
   {
     id: 6,
@@ -67,6 +59,7 @@ let tiendaDeRopaMasculina = [
     tipo: "remera mangas largas",
     precio: 24.99,
     vendido: false,
+    rutaImagen: "remeraMangaLargAzulHombre.png",
   },
   {
     id: 7,
@@ -74,8 +67,9 @@ let tiendaDeRopaMasculina = [
     talle: "xl",
     color: "negro",
     tipo: "traje",
-    precio: 149.99,
+    precio: 49.99,
     vendido: false,
+    rutaImagen: "trajeNegroHombre.png",
   },
   {
     id: 8,
@@ -85,6 +79,7 @@ let tiendaDeRopaMasculina = [
     tipo: "traje",
     precio: 29.99,
     vendido: false,
+    rutaImagen: "trajeGrisHombre.png",
   },
   {
     id: 9,
@@ -94,6 +89,7 @@ let tiendaDeRopaMasculina = [
     tipo: "pantalon",
     precio: 39.99,
     vendido: false,
+    rutaImagen: "pantalonNegroHombre.png",
   },
   {
     id: 10,
@@ -103,6 +99,7 @@ let tiendaDeRopaMasculina = [
     tipo: "campera",
     precio: 59.99,
     vendido: false,
+    rutaImagen: "camperaGrisHombre.png",
   },
   {
     id: 11,
@@ -112,69 +109,77 @@ let tiendaDeRopaMasculina = [
     tipo: "camisa",
     precio: 19.99,
     vendido: false,
+    rutaImagen: "camisaBlancaHombre.png",
   },
   {
     id: 12,
     categoria: "Hombre",
-    talle: "M",
-    color: "Azul Oscuro",
+    talle: "m",
+    color: "azul oscuro",
     tipo: "buzo",
     precio: 49.99,
     vendido: false,
+    rutaImagen: "buzoAzulOscuroHombre.png",
   },
   {
     id: 13,
     categoria: "Hombre",
-    talle: "L",
-    color: "Verde",
+    talle: "l",
+    color: "verde",
     tipo: "remera",
     precio: 34.99,
     vendido: false,
+    rutaImagen: "remeraVerdeHombre.png",
   },
   {
     id: 14,
     categoria: "Hombre",
     talle: "M",
-    color: "Azul",
-    tipo: "camisa",
+    color: "azul",
+    tipo: "traje",
     precio: 29.99,
     vendido: false,
+    rutaImagen: "trajeAzulHombre.png",
   },
   {
     id: 15,
     categoria: "Hombre",
-    talle: "L",
+    talle: "l",
     color: "Blanco",
     tipo: "remera mangas largas",
     precio: 19.99,
     vendido: false,
+    rutaImagen: "remeraMangaLargBlancaHombre.png",
   },
   {
     id: 15,
     categoria: "Hombre",
-    talle: "XL",
-    color: "Negro",
+    talle: "xl",
+    color: "verde",
     tipo: "pantalon",
     precio: 39.99,
     vendido: false,
+    rutaImagen: "pantalonVerdeHombre.png",
   },
   {
     id: 17,
     categoria: "Hombre",
-    talle: "S",
-    color: "Gris",
+    talle: "s",
+    color: "azul",
     tipo: "campera",
     precio: 59.99,
     vendido: false,
+    rutaImagen: "camperaAzulHombre.png",
   },
   {
     id: 18,
     categoria: "Hombre",
-    talle: "M",
-    color: "Azul Oscuro",
-    tipo: "remera mangas largas",
+    talle: "m",
+    color: "azul oscuro",
+    tipo: "remera",
     precio: 44.99,
     vendido: false,
+    rutaImagen: "remeraAzulHombre.png",
   },
   {
     id: 19,
@@ -184,149 +189,175 @@ let tiendaDeRopaMasculina = [
     tipo: "traje",
     precio: 24.99,
     vendido: false,
+    rutaImagen: "trajeblancoHombre.png",
   },
 ];
-tiendaDeRopaMasculina.forEach(function (producto) {
-  for (let propiedad in producto) {
-    if (typeof producto[propiedad] === "string") {
-      producto[propiedad] = producto[propiedad].toLowerCase();
-    }
-  }
-});
 
-let mensaje = "Lista de productos en la tienda de ropa masculina:\n\n";
-tiendaDeRopaMasculina.forEach(function (producto) {
-  mensaje += "ID: " + producto.id + " - ";
-  mensaje += "Talle: " + producto.talle + " - ";
-  mensaje += "Color: " + producto.color + " - ";
-  mensaje += "Precio: $" + producto.precio + " - ";
-  mensaje += "Tipo: " + producto.tipo + "\n";
-});
-alert(mensaje);
+function principal(tiendaDeRopaMasculina) {
+  let carrito = obtenerCarritoLS();
+  renderizarCarrito(carrito);
 
-// Seleccion de la accion
+  let botonBuscador = document.getElementById("botonBuscador");
+  botonBuscador.addEventListener("click", (event) => {
+    event.preventDefault();
+    filtrarYRenderizarRopa(tiendaDeRopaMasculina);
+  });
 
-let accion = prompt(
-  "Que accion quiere realizar?  \n \n buscar un producto = 1  \n filtrar los productos = 2   \n ver el carrito = 3  \n salir de la pagina = otro caracter"
-);
-accion = Number(accion);
-if (accion == 1) {
-  // metodo find
-  while (accion == 1) {
-    let productoBuscado = prompt("Escriba el producto que usted busca");
-    productoBuscado = productoBuscado.toLowerCase();
-    productoEncontrado = tiendaDeRopaMasculina.some((producto) =>
-      producto.tipo.includes(productoBuscado)
-    );
+  renderizarRopa(tiendaDeRopaMasculina);
+  let botonComprar = document.getElementById("botonComprar");
+  botonComprar.addEventListener("click", finalizarCompra);
 
-    if (productoEncontrado) {
-      let producto = tiendaDeRopaMasculina.find((ropa) =>
-        ropa.tipo.includes(productoBuscado)
-      );
-      let mostrar = "El producto que usted busco se encontro exitosamente \n";
-      mostrar += "ID: " + producto.id + " - ";
-      mostrar += "Talle: " + producto.talle + " - ";
-      mostrar += "Categoria: " + producto.categoria + " - ";
-      mostrar += "Color: " + producto.color + " - ";
-      mostrar += "Precio: $" + producto.precio + " - ";
-      mostrar += "Tipo: " + producto.tipo;
-
-      alert(mostrar);
-    } else {
-      alert("No se encontro resultados de su busqueda");
-    }
-    accion = prompt(
-      "Quiere buscar algun otro producto? \n si = 1 \nno = Ingrese otro caracter"
+  let botonesFiltrosTipos = document.getElementsByClassName("botonFiltroTipo");
+  for (const botonFiltro of botonesFiltrosTipos) {
+    botonFiltro.addEventListener("click", (e) =>
+      filtrarYRenderizarPorTipo(e, tiendaDeRopaMasculina)
     );
   }
-} else if (accion == 2) {
-  // metodo filter
-  accion = 1;
-  while (accion == 1) {
-    let filtro = prompt(
-      "ingrese como quiere filtrar los productos \n 1 = talle  \n 2 = color  \n 3 = tipo de ropa \n ingrese un dato diferente si quiere salir"
-    );
-
-    if (filtro == 1) {
-      let productoFiltrado;
-      let seleccion = prompt(
-        "¿Qué tipo de talle quiere filtrar? \n XL \n L \n M \n S"
-      );
-
-      productoFiltrado = tiendaDeRopaMasculina.filter((ropa) =>
-        ropa.talle.includes(seleccion)
-      );
-
-      let mensaje = mostrarEnPantalla(productoFiltrado);
-    } else if (filtro == 2) {
-      let productoFiltrado;
-      let seleccion = prompt(
-        "Segun que tipo de color quiere filtrar? \n azul \n negro \n blanco \n gris \n verde \n azul oscuro"
-      );
-      productoFiltrado = tiendaDeRopaMasculina.filter((ropa) =>
-        ropa.color.includes(seleccion)
-      );
-
-      let mensaje = mostrarEnPantalla(productoFiltrado);
-    } else if (filtro == 3) {
-      let productoFiltrado;
-      let seleccion = prompt(
-        "Que tipo de ropa quiere filtrar?\n camisa \n campera \n remera \n pantalon \n buzo \n remeras mangas largas \n traje "
-      );
-      productoFiltrado = tiendaDeRopaMasculina.filter((ropa) =>
-        ropa.tipo.includes(seleccion)
-      );
-      let mensaje = mostrarEnPantalla(productoFiltrado);
-    } else {
-      alert(
-        "El dato ingresado no es valido, si quiere volver a filtrar los productos reinicie la pagina"
-      );
-    }
-    accion = prompt(
-      "Quiere volver a filtrar los productos? \nsi = 1 \nno = otro caracter"
+  let botonesFiltrosColores =
+    document.getElementsByClassName("botonFiltroColor");
+  for (const botonFiltro of botonesFiltrosColores) {
+    botonFiltro.addEventListener("click", (e) =>
+      filtrarYRenderizarPorColor(e, tiendaDeRopaMasculina)
     );
   }
-} else if (accion == 3) {
-  // Agregar al carrito
-  let carrito = "Ropa agregada a su carrito \n";
-  let ingresaralcarrito = prompt(
-    "Quiere agregar un producto al carrito? \n si = 1 \n no = Ingrese otro caracter"
-  );
-  ingresaralcarrito = Number(ingresaralcarrito);
-
-  if (ingresaralcarrito == 1) {
-    while (ingresaralcarrito == 1) {
-      let agregar = prompt(
-        "Ingrese el id del producto que quiere agregar al carrito"
-      );
-      let productoAgregado = tiendaDeRopaMasculina.find(
-        (incorporar) => incorporar.id == agregar
-      );
-
-      carrito += "ID: " + productoAgregado.id + " - ";
-      carrito += "Talle: " + productoAgregado.talle + " - ";
-      carrito += "Color: " + productoAgregado.color + " - ";
-      carrito += "Precio: $" + productoAgregado.precio + " - ";
-      carrito += "Tipo: " + productoAgregado.tipo + "\n";
-
-      alert(carrito);
-
-      ingresaralcarrito = prompt(
-        "Quiere seguir agregando productos al carrito? \n si = 1 \n no = Ingrese otro caracter"
-      );
-      Number(ingresaralcarrito);
-    }
-  } else {
-    alert("Usted salio del carrito");
-  }
-  alert(
-    "Estos son los productos que tiene en su carrito:  \n\n" +
-      carrito +
-      "\n Gracias por usar nuestra pagina!!"
-  );
-} else {
-  alert("Usted salio de la pagina");
 }
-alert(
-  "Gracias por uasr nuestra pagina, si quiere volver a utilizarla, reinicie el navegador"
-);
+
+function filtrarYRenderizarPorColor(e, productos) {
+  let value = e.target.value;
+  let produtosFiltrados = productos.filter(
+    (producto) => producto.color === value
+  );
+  renderizarRopa(produtosFiltrados);
+}
+
+function filtrarYRenderizarPorTipo(e, productos) {
+  let value = e.target.value;
+  let produtosFiltrados = productos.filter(
+    (producto) => producto.tipo === value
+  );
+  renderizarRopa(produtosFiltrados);
+}
+
+function obtenerCarritoLS() {
+  let carrito = [];
+  let carritoLS = JSON.parse(localStorage.getItem("carrito"));
+  carrito = carritoLS ? carritoLS : [];
+  return carrito;
+}
+
+function finalizarCompra() {
+  localStorage.removeItem("carrito");
+  renderizarCarrito([]);
+}
+
+function filtrarYRenderizarRopa(productos) {
+  let ropaFiltrada = filtrarRopa(productos);
+  renderizarRopa(ropaFiltrada);
+}
+
+function filtrarRopa(productos) {
+  let inputBuscador = document.getElementById("inputBuscadorDeRopa");
+  return productos.filter(
+    (producto) =>
+      producto.tipo.toLowerCase().includes(inputBuscador.value.toLowerCase()) ||
+      producto.color.toLowerCase().includes(inputBuscador.value.toLowerCase())
+  );
+}
+
+function renderizarRopa(productos) {
+  let carrito = obtenerCarritoLS();
+  let contenedorcards = document.getElementById("productosCards");
+  contenedorcards.innerHTML = "";
+  productos.forEach((producto) => {
+    let { rutaImagen, tipo, color, precio, id } = producto;
+    let cards = document.createElement("div");
+    cards.className = "estilocards";
+    cards.innerHTML = `
+    <img class=ropaCards src=/fotos/ropa/${rutaImagen}>
+    <div descripcionCard>
+       <h3 class=separacionCard >${tipo}</h3>
+       <h4 class=separacionCard>Color: ${color}</h4>
+       <h5 class=separacionCard>Precio: ${precio}
+         <button class=botonDelCarrito style= border:none;>
+           <img id=${id} class=carritoCard src=./fotos/carrito.png alt=carrito>
+         </button>
+       </h5>
+    </div>
+    `;
+    contenedorcards.appendChild(cards);
+    let botonAgregarAlCarrito = cards.querySelector(".botonDelCarrito");
+    botonAgregarAlCarrito.addEventListener("click", (e) =>
+      agregarAlCarrito(e, productos)
+    );
+  });
+}
+
+function agregarAlCarrito(e, productos) {
+  let carrito = obtenerCarritoLS();
+  let idDelProducto = e.target.id ? Number(e.target.id) : null;
+
+  let productoEncontradoEnElCarrito = carrito.findIndex(
+    (producto) => producto.id === idDelProducto
+  );
+  let productoBuscado = productos.find(
+    (producto) => producto.id === idDelProducto
+  );
+
+  if (productoEncontradoEnElCarrito !== -1) {
+    carrito[productoEncontradoEnElCarrito].unidades++;
+    carrito[productoEncontradoEnElCarrito].subTotal =
+      carrito[productoEncontradoEnElCarrito].precioPorUnidad *
+      carrito[productoEncontradoEnElCarrito].unidades;
+  } else {
+    carrito.push({
+      id: productoBuscado.id,
+      color: productoBuscado.color,
+      nombre: productoBuscado.tipo,
+      precioPorUnidad: productoBuscado.precio,
+      unidades: 1,
+      subTotal: productoBuscado.precio,
+    });
+  }
+
+  localStorage.setItem("carrito", JSON.stringify(carrito));
+  renderizarCarrito(carrito);
+}
+
+function renderizarCarrito(carrito) {
+  let contenedorCarrito = document.getElementById("contendorDelCarrito");
+  contenedorCarrito.innerHTML = "";
+  carrito.forEach((producto) => {
+    let { nombre, color, unidades, subTotal, id } = producto;
+    let tarjetaProductoCarrito = document.createElement("div");
+    tarjetaProductoCarrito.id = `${id}`;
+    tarjetaProductoCarrito.className = "tarjetaDelCarrito";
+    tarjetaProductoCarrito.innerHTML = `
+    <h3>${nombre}-${color}</h3>
+    <p class=pDelCarrito>Cantidad de unidades: ${unidades}</p>
+    <p class=pDelCarrito>Precio: ${subTotal}
+      <button class="botonDelCarritoEliminar" style="border:none;">
+       <img id="eliminar${id}" class="eliminarTarjeta" src="/fotos/papelera.png">
+      </button>
+    </p>
+    `;
+    contenedorCarrito.appendChild(tarjetaProductoCarrito);
+    let botonEliminar = tarjetaProductoCarrito.querySelector(
+      ".botonDelCarritoEliminar"
+    );
+    botonEliminar.addEventListener("click", () => eliminarDelCarrito(id));
+  });
+}
+
+function eliminarDelCarrito(idProducto) {
+  let carrito = obtenerCarritoLS();
+  let indiceProducto = carrito.findIndex(
+    (producto) => producto.id === idProducto
+  );
+  if (indiceProducto !== -1) {
+    carrito.splice(indiceProducto, 1);
+    localStorage.setItem("carrito", JSON.stringify(carrito));
+    renderizarCarrito(carrito);
+  }
+}
+
+principal(tiendaDeRopaMasculina);
