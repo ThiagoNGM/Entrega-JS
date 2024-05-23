@@ -1,197 +1,10 @@
-// array de objetos
+function pedirInfo() {
+  fetch("./data.json")
+    .then((response) => response.json())
+    .then((productos) => principal(productos));
+}
 
-let tiendaDeRopaMasculina = [
-  {
-    id: 1,
-    categoria: "hombre",
-    talle: "m",
-    color: "azul",
-    tipo: "camisa",
-    precio: 29.99,
-    vendido: false,
-    rutaImagen: "camisaAzulHombre.png",
-  },
-  {
-    id: 2,
-    categoria: "hombre",
-    talle: "l",
-    color: "negro",
-    tipo: "campera",
-    precio: 69.99,
-    vendido: false,
-    rutaImagen: "camperaNegraHombre.png",
-  },
-  {
-    id: 3,
-    categoria: "hombre",
-    talle: "s",
-    color: "blanco",
-    tipo: "remera",
-    precio: 19.99,
-    vendido: false,
-    rutaImagen: "remeraBlancaHombre.png",
-  },
-  {
-    id: 4,
-    categoria: "hombre",
-    talle: "xl",
-    color: "gris",
-    tipo: "pantalon",
-    precio: 39.99,
-    vendido: false,
-    rutaImagen: "pantalonGrisHombre.png",
-  },
-  {
-    id: 5,
-    categoria: "hombre",
-    talle: "m",
-    color: "verde",
-    tipo: "buzo",
-    precio: 49.99,
-    vendido: false,
-    rutaImagen: "buzoVerdeHombre.png",
-  },
-  {
-    id: 6,
-    categoria: "hombre",
-    talle: "l",
-    color: "azul oscuro",
-    tipo: "remera mangas largas",
-    precio: 24.99,
-    vendido: false,
-    rutaImagen: "remeraMangaLargAzulHombre.png",
-  },
-  {
-    id: 7,
-    categoria: "hombre",
-    talle: "xl",
-    color: "negro",
-    tipo: "traje",
-    precio: 49.99,
-    vendido: false,
-    rutaImagen: "trajeNegroHombre.png",
-  },
-  {
-    id: 8,
-    categoria: "hombre",
-    talle: "m",
-    color: "gris",
-    tipo: "traje",
-    precio: 29.99,
-    vendido: false,
-    rutaImagen: "trajeGrisHombre.png",
-  },
-  {
-    id: 9,
-    categoria: "hombre",
-    talle: "l",
-    color: "negro",
-    tipo: "pantalon",
-    precio: 39.99,
-    vendido: false,
-    rutaImagen: "pantalonNegroHombre.png",
-  },
-  {
-    id: 10,
-    categoria: "hombre",
-    talle: "xl",
-    color: "gris",
-    tipo: "campera",
-    precio: 59.99,
-    vendido: false,
-    rutaImagen: "camperaGrisHombre.png",
-  },
-  {
-    id: 11,
-    categoria: "hombre",
-    talle: "s",
-    color: "blanco",
-    tipo: "camisa",
-    precio: 19.99,
-    vendido: false,
-    rutaImagen: "camisaBlancaHombre.png",
-  },
-  {
-    id: 12,
-    categoria: "Hombre",
-    talle: "m",
-    color: "azul oscuro",
-    tipo: "buzo",
-    precio: 49.99,
-    vendido: false,
-    rutaImagen: "buzoAzulOscuroHombre.png",
-  },
-  {
-    id: 13,
-    categoria: "Hombre",
-    talle: "l",
-    color: "verde",
-    tipo: "remera",
-    precio: 34.99,
-    vendido: false,
-    rutaImagen: "remeraVerdeHombre.png",
-  },
-  {
-    id: 14,
-    categoria: "Hombre",
-    talle: "M",
-    color: "azul",
-    tipo: "traje",
-    precio: 29.99,
-    vendido: false,
-    rutaImagen: "trajeAzulHombre.png",
-  },
-  {
-    id: 15,
-    categoria: "Hombre",
-    talle: "l",
-    color: "Blanco",
-    tipo: "remera mangas largas",
-    precio: 19.99,
-    vendido: false,
-    rutaImagen: "remeraMangaLargBlancaHombre.png",
-  },
-  {
-    id: 15,
-    categoria: "Hombre",
-    talle: "xl",
-    color: "verde",
-    tipo: "pantalon",
-    precio: 39.99,
-    vendido: false,
-    rutaImagen: "pantalonVerdeHombre.png",
-  },
-  {
-    id: 17,
-    categoria: "Hombre",
-    talle: "s",
-    color: "azul",
-    tipo: "campera",
-    precio: 59.99,
-    vendido: false,
-    rutaImagen: "camperaAzulHombre.png",
-  },
-  {
-    id: 18,
-    categoria: "Hombre",
-    talle: "m",
-    color: "azul oscuro",
-    tipo: "remera",
-    precio: 44.99,
-    vendido: false,
-    rutaImagen: "remeraAzulHombre.png",
-  },
-  {
-    id: 19,
-    categoria: "Hombre",
-    talle: "L",
-    color: "blanco",
-    tipo: "traje",
-    precio: 24.99,
-    vendido: false,
-    rutaImagen: "trajeblancoHombre.png",
-  },
-];
+pedirInfo();
 
 function principal(tiendaDeRopaMasculina) {
   let carrito = obtenerCarritoLS();
@@ -248,6 +61,13 @@ function obtenerCarritoLS() {
 function finalizarCompra() {
   localStorage.removeItem("carrito");
   renderizarCarrito([]);
+  Swal.fire({
+    position: "top-end",
+    icon: "success",
+    title: "Se realizo la compra con exito",
+    showConfirmButton: false,
+    timer: 1000,
+  });
 }
 
 function filtrarYRenderizarRopa(productos) {
@@ -295,6 +115,8 @@ function renderizarRopa(productos) {
 function agregarAlCarrito(e, productos) {
   let carrito = obtenerCarritoLS();
   let idDelProducto = e.target.id ? Number(e.target.id) : null;
+
+  tostada("Se agrego el producto al carrito", "top", "left", 2000);
 
   let productoEncontradoEnElCarrito = carrito.findIndex(
     (producto) => producto.id === idDelProducto
@@ -353,11 +175,23 @@ function eliminarDelCarrito(idProducto) {
   let indiceProducto = carrito.findIndex(
     (producto) => producto.id === idProducto
   );
+
+  tostada("Se elimino el producto del carrito", "top", "left", 2000);
+
   if (indiceProducto !== -1) {
     carrito.splice(indiceProducto, 1);
     localStorage.setItem("carrito", JSON.stringify(carrito));
     renderizarCarrito(carrito);
   }
+}
+
+function tostada(text, gravity, position, duration) {
+  Toastify({
+    text,
+    gravity,
+    position,
+    duration,
+  }).showToast();
 }
 
 principal(tiendaDeRopaMasculina);
