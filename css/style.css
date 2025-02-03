@@ -3,8 +3,9 @@
   padding: 0%;
   box-sizing: border-box;
 }
+
 body {
-  background-image: url(/fotos/fondoPaginaPrincipal.jpg);
+  background-image: url(fotos/fondoPaginaPrincipal.jpg);
   font-family: "Lora", serif;
   font-optical-sizing: auto;
   font-weight: weight;
@@ -13,6 +14,7 @@ body {
   background-attachment: fixed;
   background-size: cover;
 }
+
 .containerPaginaPrincipal {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -26,12 +28,14 @@ body {
 .header {
   grid-area: header;
 }
+
 .nav {
   display: flex;
   border-radius: 5px;
   margin: 1%;
   justify-content: space-between;
 }
+
 .navImg {
   height: 50px;
   margin: 0 10px;
@@ -43,6 +47,7 @@ body {
   padding: 10px;
   font-size: 1rem;
 }
+
 .boton {
   font-family: "Lora", serif;
   font-optical-sizing: auto;
@@ -51,11 +56,13 @@ body {
   color: black;
   font-size: 1.5rem;
 }
+
 .descripcion {
   color: rgb(255, 255, 255);
   margin: 2%;
   font-size: 2.5rem;
 }
+
 .subtitulo {
   font-size: 1.5rem;
   color: rgb(255, 255, 255);
@@ -75,14 +82,17 @@ body {
 .descripcionCard {
   display: flex;
 }
+
 .botonDelCarrito {
   width: 50px;
   margin-left: 50px;
   padding: 5px;
 }
+
 .carritoCard {
   width: 40px;
 }
+
 .estilocards {
   background-color: beige;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
@@ -92,6 +102,7 @@ body {
   margin: 20px;
   width: 250px;
 }
+
 .ropaCards {
   width: 250px;
   height: 300px;
@@ -99,6 +110,7 @@ body {
   padding: 0 20px;
   border-radius: 5px;
 }
+
 .footer {
   grid-area: footer;
 }
@@ -119,6 +131,7 @@ body {
   margin: auto;
   border-radius: 5px;
 }
+
 .tarjetaDelCarrito {
   margin: 20px;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
@@ -127,17 +140,21 @@ body {
   border-radius: 5px;
   padding: 10px;
 }
+
 .pDelCarrito {
   font-size: 1.5rem;
   color: black;
 }
+
 .eliminarTarjeta {
   width: 60px;
   padding: 10px;
 }
+
 .separacionCard {
   padding: 0 5px;
 }
+
 .comprarCarrito {
   margin: 1% 5%;
 }
