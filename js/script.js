@@ -93,7 +93,7 @@ function renderizarRopa(productos) {
     let cards = document.createElement("div");
     cards.className = "estilocards";
     cards.innerHTML = `
-    <img class="ropaCards" src="/fotos/ropa/${rutaImagen}">
+    <img class="ropaCards" src="fotos/ropa/${rutaImagen}">
     <div class="descripcionCard">
        <h3 class="separacionCard">${tipo}</h3>
        <h4 class="separacionCard">Color: ${color}</h4>
