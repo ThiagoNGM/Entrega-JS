@@ -194,4 +194,4 @@ function tostada(text, gravity, position, duration) {
   }).showToast();
 }
 
-principal(tiendaDeRopaMasculina);
+pedirInfo();
