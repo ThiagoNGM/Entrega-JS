@@ -35,7 +35,7 @@
     "talle": "xl",
     "color": "gris",
     "tipo": "pantalon",
-    "precio": 39.99,
+    "precio": 49.99,
     "vendido": false,
     "rutaImagen": "pantalonGrisHombre.png"
   },

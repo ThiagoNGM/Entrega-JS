@@ -1,218 +1,161 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>StyleForHim</title>
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
-    />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
-      crossorigin="anonymous"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="icon" type="image/.ico" href="./fotos/apple-touch-icon.png" />
-    <link rel="stylesheet" href="/css/style.css" />
-  </head>
 
-  <body>
-    <div class="containerPaginaPrincipal">
-      <header class="header">
-        <nav class="navbar navbar-expand-lg bg-light nav">
-          <div class="container-fluid">
-            <button
-              class="navbar-toggler"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#navbarSupportedContent"
-              aria-controls="navbarSupportedContent"
-              aria-expanded="false"
-              aria-label="Toggle navigation"
-            >
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                  <img
-                    class="navImg"
-                    src="/fotos/logo.png"
-                    alt="Logo de la Pagina"
-                  />
-                </li>
-                <li><h1 class="boton">StyleForHim</h1></li>
-              </ul>
-              <form>
-                <input
-                  id="inputBuscadorDeRopa"
-                  class="borde"
-                  placeholder="Buscar ropa"
-                />
-                <button id="botonBuscador" class="borde" type="submit">
-                  Buscar
-                </button>
-              </form>
-              <li class="nav-item dropdown">
-                <a
-                  class="nav-link dropdown-toggle boton"
-                  href="#"
-                  role="button"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                >
-                  Filtrar
-                </a>
-                <ul class="dropdown-menu">
-                  <h3 class="dropdown-item">Color</h3>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>StyleForHim</title>
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap"
+    rel="stylesheet" />
+  <link rel="icon" type="image/.ico" href="./fotos/apple-touch-icon.png" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
 
-                  <li>
-                    <button value="azul" class="dropdown-item botonFiltroColor">
-                      Azul
-                    </button>
-                  </li>
-                  <li>
-                    <button
-                      value="azul oscuro"
-                      class="dropdown-item botonFiltroColor"
-                    >
-                      Azul Oscuro
-                    </button>
-                  </li>
-                  <li>
-                    <button
-                      value="blanco"
-                      class="dropdown-item botonFiltroColor"
-                    >
-                      Blanco
-                    </button>
-                  </li>
-                  <li>
-                    <button value="gris" class="dropdown-item botonFiltroColor">
-                      Gris
-                    </button>
-                  </li>
-                  <li>
-                    <button
-                      value="negro"
-                      class="dropdown-item botonFiltroColor"
-                    >
-                      Negro
-                    </button>
-                  </li>
-                  <li>
-                    <button
-                      value="verde"
-                      class="dropdown-item botonFiltroColor"
-                    >
-                      Verde
-                    </button>
-                  </li>
-
-                  <li><hr class="dropdown-divider" /></li>
-
-                  <h3 class="dropdown-item">Tipo</h3>
-
-                  <li>
-                    <button value="buzo" class="dropdown-item botonFiltroTipo">
-                      Buzo
-                    </button>
-                  </li>
-                  <li>
-                    <button
-                      value="camisa"
-                      class="dropdown-item botonFiltroTipo"
-                    >
-                      Camisa
-                    </button>
-                  </li>
-                  <li>
-                    <button
-                      value="campera"
-                      class="dropdown-item botonFiltroTipo"
-                    >
-                      Campera
-                    </button>
-                  </li>
-                  <li>
-                    <button
-                      value="pantalon"
-                      class="dropdown-item botonFiltroTipo"
-                    >
-                      Pantalón
-                    </button>
-                  </li>
-                  <li>
-                    <button
-                      value="remera"
-                      class="dropdown-item botonFiltroTipo"
-                    >
-                      Remera
-                    </button>
-                  </li>
-                  <li>
-                    <button
-                      value="remera mangas largas"
-                      class="dropdown-item botonFiltroTipo"
-                    >
-                      Remera Mangas largas
-                    </button>
-                  </li>
-                  <li>
-                    <button value="traje" class="dropdown-item botonFiltroTipo">
-                      Traje
-                    </button>
-                  </li>
-                </ul>
-              </li>
-              <li class="nav-item">
-                <a href="#botonComprar"
-                  ><img src="/fotos/carrito.png" class="navImg" alt="Carrito"
-                /></a>
-              </li>
-            </div>
-          </div>
-        </nav>
-        <div>
-          <h2 class="descripcion">Ropa Masculina: Estilo Clasico y Elegante</h2>
-          <p class="subtitulo">
-            Prendas casuales y elegantes para que mantengas un estilo fresco y
-            actual en todo momento, con la ropa masculina de StyleForHim
-          </p>
-        </div>
-      </header>
-      <main class="main">
-        <div id="productosCards"></div>
-        <div>
-          <h2 class="infoDelCarrito">Su carrito</h2>
-          <h3 class="infoDelCarrito">Productos:</h3>
-          <div id="contendorDelCarrito"></div>
-          <button id="botonComprar" class="comprarCarrito borde">
-            Comprar Productos
+<body>
+  <div class="containerPaginaPrincipal">
+    <header class="header">
+      <nav class="navbar navbar-expand-lg bg-light nav">
+        <div class="container-fluid">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
           </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <img class="navImg" src="/fotos/logo.png" alt="Logo de la Pagina" />
+              </li>
+              <li>
+                <h1 class="boton">StyleForHim</h1>
+              </li>
+            </ul>
+            <form>
+              <input id="inputBuscadorDeRopa" class="borde" placeholder="Buscar ropa" />
+              <button id="botonBuscador" class="borde" type="submit">
+                Buscar
+              </button>
+            </form>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle boton" href="#" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                Filtrar
+              </a>
+              <ul class="dropdown-menu">
+                <h3 class="dropdown-item">Color</h3>
+
+                <li>
+                  <button value="azul" class="dropdown-item botonFiltroColor">
+                    Azul
+                  </button>
+                </li>
+                <li>
+                  <button value="azul oscuro" class="dropdown-item botonFiltroColor">
+                    Azul Oscuro
+                  </button>
+                </li>
+                <li>
+                  <button value="blanco" class="dropdown-item botonFiltroColor">
+                    Blanco
+                  </button>
+                </li>
+                <li>
+                  <button value="gris" class="dropdown-item botonFiltroColor">
+                    Gris
+                  </button>
+                </li>
+                <li>
+                  <button value="negro" class="dropdown-item botonFiltroColor">
+                    Negro
+                  </button>
+                </li>
+                <li>
+                  <button value="verde" class="dropdown-item botonFiltroColor">
+                    Verde
+                  </button>
+                </li>
+
+                <li>
+                  <hr class="dropdown-divider" />
+                </li>
+
+                <h3 class="dropdown-item">Tipo</h3>
+
+                <li>
+                  <button value="buzo" class="dropdown-item botonFiltroTipo">
+                    Buzo
+                  </button>
+                </li>
+                <li>
+                  <button value="camisa" class="dropdown-item botonFiltroTipo">
+                    Camisa
+                  </button>
+                </li>
+                <li>
+                  <button value="campera" class="dropdown-item botonFiltroTipo">
+                    Campera
+                  </button>
+                </li>
+                <li>
+                  <button value="pantalon" class="dropdown-item botonFiltroTipo">
+                    Pantalón
+                  </button>
+                </li>
+                <li>
+                  <button value="remera" class="dropdown-item botonFiltroTipo">
+                    Remera
+                  </button>
+                </li>
+                <li>
+                  <button value="remera mangas largas" class="dropdown-item botonFiltroTipo">
+                    Remera Mangas largas
+                  </button>
+                </li>
+                <li>
+                  <button value="traje" class="dropdown-item botonFiltroTipo">
+                    Traje
+                  </button>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a href="#botonComprar"><img src="/fotos/carrito.png" class="navImg" alt="Carrito" /></a>
+            </li>
+          </div>
         </div>
-        <footer class="footer"></footer>
-      </main>
-    </div>
-    <script
-      type="text/javascript"
-      src="https://cdn.jsdelivr.net/npm/toastify-js"
-    ></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-      crossorigin="anonymous"
-    ></script>
-    <script src="js/script.js"></script>
-  </body>
+      </nav>
+      <div>
+        <h2 class="descripcion">Ropa Masculina: Estilo Clasico y Elegante</h2>
+        <p class="subtitulo">
+          Prendas casuales y elegantes para que mantengas un estilo fresco y
+          actual en todo momento, con la ropa masculina de StyleForHim
+        </p>
+      </div>
+    </header>
+    <main class="main">
+      <div id="productosCards"></div>
+      <div>
+        <h2 class="infoDelCarrito">Su carrito</h2>
+        <h3 class="infoDelCarrito">Productos:</h3>
+        <div id="contendorDelCarrito"></div>
+        <button id="botonComprar" class="comprarCarrito borde">
+          Comprar Productos
+        </button>
+      </div>
+      <footer class="footer"></footer>
+    </main>
+  </div>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+  <script src="js/script.js"></script>
+</body>
+
 </html>
