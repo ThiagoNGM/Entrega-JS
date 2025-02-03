@@ -37,18 +37,18 @@ function principal(tiendaDeRopaMasculina) {
 
 function filtrarYRenderizarPorColor(e, productos) {
   let value = e.target.value;
-  let produtosFiltrados = productos.filter(
+  let productosFiltrados = productos.filter(
     (producto) => producto.color === value
   );
-  renderizarRopa(produtosFiltrados);
+  renderizarRopa(productosFiltrados);
 }
 
 function filtrarYRenderizarPorTipo(e, productos) {
   let value = e.target.value;
-  let produtosFiltrados = productos.filter(
+  let productosFiltrados = productos.filter(
     (producto) => producto.tipo === value
   );
-  renderizarRopa(produtosFiltrados);
+  renderizarRopa(productosFiltrados);
 }
 
 function obtenerCarritoLS() {
@@ -64,7 +64,7 @@ function finalizarCompra() {
   Swal.fire({
     position: "top-end",
     icon: "success",
-    title: "Se realizo la compra con exito",
+    title: "Se realizó la compra con éxito",
     showConfirmButton: false,
     timer: 1000,
   });
@@ -93,13 +93,13 @@ function renderizarRopa(productos) {
     let cards = document.createElement("div");
     cards.className = "estilocards";
     cards.innerHTML = `
-    <img class=ropaCards src=/fotos/ropa/${rutaImagen}>
-    <div descripcionCard>
-       <h3 class=separacionCard >${tipo}</h3>
-       <h4 class=separacionCard>Color: ${color}</h4>
-       <h5 class=separacionCard>Precio: ${precio}
-         <button class=botonDelCarrito style= border:none;>
-           <img id=${id} class=carritoCard src=./fotos/carrito.png alt=carrito>
+    <img class="ropaCards" src="/fotos/ropa/${rutaImagen}">
+    <div class="descripcionCard">
+       <h3 class="separacionCard">${tipo}</h3>
+       <h4 class="separacionCard">Color: ${color}</h4>
+       <h5 class="separacionCard">Precio: ${precio}
+         <button class="botonDelCarrito" style="border:none;">
+           <img id="${id}" class="carritoCard" src="./fotos/carrito.png" alt="carrito">
          </button>
        </h5>
     </div>
@@ -116,7 +116,7 @@ function agregarAlCarrito(e, productos) {
   let carrito = obtenerCarritoLS();
   let idDelProducto = e.target.id ? Number(e.target.id) : null;
 
-  tostada("Se agrego el producto al carrito", "top", "left", 2000);
+  tostada("Se agregó el producto al carrito", "top", "left", 2000);
 
   let productoEncontradoEnElCarrito = carrito.findIndex(
     (producto) => producto.id === idDelProducto
@@ -154,9 +154,9 @@ function renderizarCarrito(carrito) {
     tarjetaProductoCarrito.id = `${id}`;
     tarjetaProductoCarrito.className = "tarjetaDelCarrito";
     tarjetaProductoCarrito.innerHTML = `
-    <h3>${nombre}-${color}</h3>
-    <p class=pDelCarrito>Cantidad de unidades: ${unidades}</p>
-    <p class=pDelCarrito>Precio: ${subTotal}
+    <h3>${nombre} - ${color}</h3>
+    <p class="pDelCarrito">Cantidad de unidades: ${unidades}</p>
+    <p class="pDelCarrito">Precio: ${subTotal}
       <button class="botonDelCarritoEliminar" style="border:none;">
        <img id="eliminar${id}" class="eliminarTarjeta" src="/fotos/papelera.png">
       </button>
@@ -176,7 +176,7 @@ function eliminarDelCarrito(idProducto) {
     (producto) => producto.id === idProducto
   );
 
-  tostada("Se elimino el producto del carrito", "top", "left", 2000);
+  tostada("Se eliminó el producto del carrito", "top", "left", 2000);
 
   if (indiceProducto !== -1) {
     carrito.splice(indiceProducto, 1);
@@ -193,5 +193,3 @@ function tostada(text, gravity, position, duration) {
     duration,
   }).showToast();
 }
-
-pedirInfo();
