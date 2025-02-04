@@ -5,7 +5,7 @@
 }
 
 body {
-  background-image: url(fotos/fondoPaginaPrincipal.jpg);
+  background-image: url("../fotos/fondoPaginaPrincipal.jpg");
   font-family: "Lora", serif;
   font-optical-sizing: auto;
   font-weight: weight;
