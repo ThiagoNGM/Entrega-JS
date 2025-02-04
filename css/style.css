@@ -5,7 +5,9 @@
 }
 
 body {
-  background-image: url("../fotos/fondoPaginaPrincipal.jpg");
+  background: #232526;
+  background: -webkit-linear-gradient(to left, #414345, #232526);
+  background: linear-gradient(to left, #414345, #232526);
   font-family: "Lora", serif;
   font-optical-sizing: auto;
   font-weight: weight;
