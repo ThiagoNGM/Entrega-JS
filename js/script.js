@@ -97,11 +97,12 @@ function renderizarRopa(productos) {
     <div class="descripcionCard">
        <h3 class="separacionCard">${tipo}</h3>
        <h4 class="separacionCard">Color: ${color}</h4>
-       <h5 class="separacionCard">Precio: ${precio}
-         <button class="botonDelCarrito" style="border:none;">
-           <img id="${id}" class="carritoCard" src="./fotos/carrito.png" alt="carrito">
-         </button>
-       </h5>
+      <div class="descripcionCard2">
+       <h5 class="separacionCard">Precio: ${precio}</h5>
+        <button class="botonDelCarrito" style="border:none;">
+          <img id="${id}" class="carritoCard" src="./fotos/carrito.png" alt="carrito">
+        </button>
+       </div>
     </div>
     `;
     contenedorcards.appendChild(cards);
